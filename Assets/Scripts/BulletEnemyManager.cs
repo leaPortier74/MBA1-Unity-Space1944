@@ -40,8 +40,6 @@ public class BulletEnemyManager : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletPrefab, spawner.transform.position, Quaternion.identity);
 
-        // kill enemies
-        
         m_Bullet.Add(bullet);
     }
 

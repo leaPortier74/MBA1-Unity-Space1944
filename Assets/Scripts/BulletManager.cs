@@ -44,8 +44,6 @@ public class BulletManager : MonoBehaviour
         
         BulletData data = getRandomBulletData();
 
-        // kill enemies
-        
         m_Bullet.Add(bullet);
     }
 
