@@ -769,7 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 1576326388}
   spawner: {fileID: 1623164694}
-  enemyPrefab: {fileID: 6235393367043323962, guid: a9c3e0e47542147868d85161c5bb31e3, type: 3}
+  enemyPrefab: {fileID: -194919470695629084, guid: 2ce1fb9d977e03b49a1ce0113faf945e, type: 3}
   enemyDataList:
   - {fileID: 11400000, guid: 0fe0d84465cc64f9587f59fcbfb794a0, type: 2}
   delay: 3

@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     
     public EnemiesManager Enemies { get; private set; }
     
+    public BulletManager Bullet { get; private set; }
+    
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         Score = GetComponent<ScoreManager>();
         Audio = GetComponent<AudioManager>();
         Enemies = GetComponent<EnemiesManager>();
+        Bullet = GetComponent<BulletManager>();
     }
     
     public void StartGame()
@@ -49,6 +52,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Enemies.StartSpawning();
+        Bullet.StartSpawning();
         
     }
 
