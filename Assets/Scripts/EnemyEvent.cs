@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class EnemyEvent : MonoBehaviour
+public class EnemyEvent : EventArgs
 {
     public Enemy Enemy{ get; private set; }
 

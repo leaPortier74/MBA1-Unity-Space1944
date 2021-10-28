@@ -798,6 +798,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1380017116342218071, guid: 547dcc4812db24be88636bb32368279a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380017116342218071, guid: 547dcc4812db24be88636bb32368279a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8909566600590826687, guid: 547dcc4812db24be88636bb32368279a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -848,6 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 478295744, guid: 547dcc4812db24be88636bb32368279a, type: 3}
+    - {fileID: 2563872960370029391, guid: 547dcc4812db24be88636bb32368279a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 547dcc4812db24be88636bb32368279a, type: 3}
 --- !u!4 &8920852038368876867 stripped
 Transform:

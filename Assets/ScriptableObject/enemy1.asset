@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b20b5bc91a0c4bafaec0d721efe2397, type: 3}
   m_Name: enemy1
   m_EditorClassIdentifier: 
-  score: 10
+  score: 0
   clip: {fileID: 0}
