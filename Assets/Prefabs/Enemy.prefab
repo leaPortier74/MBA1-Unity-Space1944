@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 6559502622305853584}
   bulletPrefab: {fileID: 1860706049015914, guid: 0b0c27137eb4d504096874b80ace66bd, type: 3}
-  delay: 5
+  delay: 3
 --- !u!1 &6559502622305853584
 GameObject:
   m_ObjectHideFlags: 0

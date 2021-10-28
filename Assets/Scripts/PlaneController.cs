@@ -52,7 +52,17 @@ public class PlaneController : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("OnCollisionEnter2D");
+        //Debug.Log("OnCollisionEnter2D");
 
+        if (col.gameObject.CompareTag("BulletEnemy"))
+        {
+            col.gameObject.GetComponent<BulletEnemy>().Damage();
+            Die();
+        } 
+    }
+    
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

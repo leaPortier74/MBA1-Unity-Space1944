@@ -27,6 +27,27 @@ public class BulletEnemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        //Debug.Log("OnCollisionEnter2D");
+
+        if (col.gameObject.CompareTag("Bullet"))
+        {
+            col.gameObject.GetComponent<Bullet>().Damage();
+            Die();
+        } 
+        
+        if (col.gameObject.CompareTag("Bounds"))
+        {
+            Die();
+        } 
+    }
 
     // Start is called before the first frame update
     void Start()
