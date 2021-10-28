@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public EnemiesManager Enemies { get; private set; }
     
     public BulletManager Bullet { get; private set; }
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         Playing = false;
         Enemies.StopSpawninig();
+        
         //Score.SubmitScore(Score.Value);
     }
     

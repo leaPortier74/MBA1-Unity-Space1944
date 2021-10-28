@@ -610,8 +610,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1623164694}
   - component: {fileID: 1623164697}
-  - component: {fileID: 1623164696}
   - component: {fileID: 1623164695}
+  - component: {fileID: 1623164696}
   m_Layer: 9
   m_Name: SpawnerEnemies
   m_TagString: Untagged
@@ -654,13 +654,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1623164693}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b5e4fed0bd9be4f2694513d410bf61af, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016116187, y: 0}
+  m_Offset: {x: 0.004373856, y: 0}
   serializedVersion: 2
-  m_Radius: 0.19379272
+  m_Radius: 0.11072593
 --- !u!50 &1623164697
 Rigidbody2D:
   serializedVersion: 4

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     private SpriteRenderer m_Renderer;
     
+    public int health = 3;
+    
     public bool autoDestroy = true;
     
     private void Awake()
@@ -21,7 +23,7 @@ public class Enemy : MonoBehaviour
         Data = data;
 
     }
-    
+
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("OnCollisionEnter2D");
@@ -36,6 +38,15 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+    
+    public void Damage()
+    {
+        health--;
+        if (health==0)
+        {
+            Destroy(gameObject);
+        }
     }
     
     

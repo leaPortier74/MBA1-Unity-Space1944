@@ -11,7 +11,7 @@ public class PlaneController : MonoBehaviour
     [Range(0, 10)]
     public float speed = 1f;
 
-    public int health = 0;
+    public int health = 3;
 
     private void Awake()
     {
