@@ -40,7 +40,8 @@ public class BulletManager : MonoBehaviour
     {
 
         GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
-      
+        bullet.transform.parent = container.transform;
+        
         BulletData data = getRandomBulletData();
 
         // kill enemies
