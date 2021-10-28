@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     private SpriteRenderer m_Renderer;
     
     public BulletData Data{ get; private set; }
+    
+    [Range(0, 8)]
+    public float speed = 1f;
 
     private void Awake()
     {
@@ -18,6 +21,11 @@ public class Bullet : MonoBehaviour
     {
         Data = data;
 
+    }
+    
+    public void Damage()
+    {
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update

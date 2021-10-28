@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     private SpriteRenderer m_Renderer;
     
+    public bool autoDestroy = true;
+    
     private void Awake()
     {
         m_Renderer = GetComponent<SpriteRenderer>();
@@ -18,6 +20,22 @@ public class Enemy : MonoBehaviour
     {
         Data = data;
 
+    }
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        //Debug.Log("OnCollisionEnter2D");
+
+        if (col.gameObject.CompareTag("Bullet"))
+        {
+            col.gameObject.GetComponent<Bullet>().Damage();
+            Die();
+        } 
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
     
     

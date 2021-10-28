@@ -11,6 +11,8 @@ public class PlaneController : MonoBehaviour
     [Range(0, 10)]
     public float speed = 1f;
 
+    public int health = 0;
+
     private void Awake()
     {
         m_body = GetComponent<Rigidbody2D>();
@@ -37,6 +39,15 @@ public class PlaneController : MonoBehaviour
         m_body.velocity = translation * speed;
 
 
+    }
+
+    public void Damage()
+    {
+        health--;
+        if (health==0)
+        {
+            Destroy(gameObject);
+        }
     }
     
     void OnCollisionEnter2D(Collision2D col)

@@ -788,7 +788,7 @@ MonoBehaviour:
   container: {fileID: 8920852038368876867}
   spawner: {fileID: 478295743}
   bulletPrefab: {fileID: 1019480068096796, guid: 1740469607c5ef74a9dce354e6c48998, type: 3}
-  delay: 5
+  delay: 3
   bulletDataList:
   - {fileID: 11400000, guid: 1f9993770a8514394ac2b48ee5738b6a, type: 2}
 --- !u!1001 &29300010305537532
