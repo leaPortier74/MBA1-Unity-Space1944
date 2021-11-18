@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055151358943464}
   - component: {fileID: 212975623519947666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ship2-lines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4629620492563178}
   - component: {fileID: 212816092555092974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ship2-flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7417494731707212077}
   - component: {fileID: 2425905986535151664}
   - component: {fileID: 3826208650586385768}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2014820854517149532}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: spawnerBulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

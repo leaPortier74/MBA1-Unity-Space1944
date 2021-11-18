@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 478295743}
   - component: {fileID: 478295744}
   - component: {fileID: 2563872960370029391}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: SpawnerBullets
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
