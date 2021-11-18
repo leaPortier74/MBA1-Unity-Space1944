@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlaneController : MonoBehaviour
 {
 
+    private GameManager gameManager;
+    
     private Rigidbody2D m_body;
     
     [Range(0, 10)]
@@ -13,6 +15,7 @@ public class PlaneController : MonoBehaviour
     private void Awake()
     {
         m_body = GetComponent<Rigidbody2D>();
+        gameManager = GameManager.Instance;
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PlaneController : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                gameManager.StopGame();
             }
             // col.gameObject.GetComponent<BulletEnemy>().Die();
             Destroy(col.gameObject);

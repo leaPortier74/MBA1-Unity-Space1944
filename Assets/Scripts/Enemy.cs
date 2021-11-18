@@ -4,27 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    public EnemyData Data{ get; private set; }
-
-    private SpriteRenderer m_Renderer;
     
     public int health = 3;
-
-    private void Awake()
-    {
-        m_Renderer = GetComponent<SpriteRenderer>();
-    }
-
-    public void LoadData(EnemyData data)
-    {
-        Data = data;
-
-    }
-    
-    void OnBecameInvisible() {
-        Destroy(gameObject);
-    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

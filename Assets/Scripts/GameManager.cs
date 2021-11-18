@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     
-    public bool Playing { get; private set; } = false;
+    private bool Playing = false;
     
     public ScoreManager Score { get; private set; }
 
@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     public BulletManager Bullet { get; private set; }
 
-    public PlaneController Player;
 
     private void Awake()
     {
@@ -34,7 +33,6 @@ public class GameManager : MonoBehaviour
         Audio = GetComponent<AudioManager>();
         Enemies = GetComponent<EnemiesManager>();
         Bullet = GetComponent<BulletManager>();
-        Player = GetComponent<PlaneController>();
     }
 
     
@@ -43,31 +41,23 @@ public class GameManager : MonoBehaviour
         Playing = true;
         //Audio.PlayMainTheme();
         Enemies.StartSpawning();
+        Bullet.StartSpawning();
         //Score.Reset();
     }
-
-    public void PlayerDie()
-    {
-        if (Player)
-        {
-            StopGame();
-        }
-    }
     
-    private void StopGame()
+    public void StopGame()
     {
         Playing = false;
         Enemies.StopSpawninig();
-
+        Bullet.StartSpawning();
         //Score.SubmitScore(Score.Value);
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        Enemies.StartSpawning();
-        Bullet.StartSpawning();
-        
+        StartGame();
+
     }
 
 }

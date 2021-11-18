@@ -17,9 +17,4 @@ public class MouveRandom : MonoBehaviour
         m_body.velocity = new Vector2(x, y);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

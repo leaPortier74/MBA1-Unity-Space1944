@@ -690,7 +690,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5e4fed0bd9be4f2694513d410bf61af, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -819,6 +819,10 @@ PrefabInstance:
     - target: {fileID: 1380017116342218071, guid: 547dcc4812db24be88636bb32368279a, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280425244092515645, guid: 547dcc4812db24be88636bb32368279a, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8909566600590826687, guid: 547dcc4812db24be88636bb32368279a, type: 3}
       propertyPath: m_RootOrder
