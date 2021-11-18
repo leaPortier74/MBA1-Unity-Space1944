@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BulletManager : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class BulletManager : MonoBehaviour
         m_SpawnRoutine = StartCoroutine(SpawnRoutine());
     }
 
-    public void StopSpawninig()
+    public void StopSpawning()
     {
         StopCoroutine(m_SpawnRoutine);
     }
@@ -38,7 +40,8 @@ public class BulletManager : MonoBehaviour
     
     private void Spawn()
     {
-
+        if (!spawner) return;
+        
         GameObject bullet = Instantiate(bulletPrefab, spawner.position, Quaternion.identity);
         bullet.transform.parent = container.transform;
         
@@ -53,15 +56,8 @@ public class BulletManager : MonoBehaviour
         return bulletDataList[index];
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDestroy()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StopSpawning();
     }
 }

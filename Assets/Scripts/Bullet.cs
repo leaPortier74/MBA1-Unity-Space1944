@@ -25,6 +25,9 @@ public class Bullet : MonoBehaviour
 
     }
 
+    void OnBecameInvisible() {
+        Destroy(gameObject);
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -35,7 +38,6 @@ public class Bullet : MonoBehaviour
             //col.gameObject.GetComponent<BulletEnemy>().Die();
             Destroy(col.gameObject);
         } 
-        
         if (col.gameObject.CompareTag("Bounds"))
         {
             Destroy(gameObject);

@@ -10,9 +10,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer m_Renderer;
     
     public int health = 3;
-    
-    public bool autoDestroy = true;
-    
+
     private void Awake()
     {
         m_Renderer = GetComponent<SpriteRenderer>();
@@ -22,6 +20,10 @@ public class Enemy : MonoBehaviour
     {
         Data = data;
 
+    }
+    
+    void OnBecameInvisible() {
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D col)

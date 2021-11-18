@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneController : MonoBehaviour
@@ -37,12 +34,14 @@ public class PlaneController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log("OnCollisionEnter2D");
+        Debug.Log("PlaneController OnCollisionEnter2D");
 
         if (col.gameObject.CompareTag("BulletEnemy"))
         {
+            Debug.Log("PlaneController hit BulletEnemy");
             health--;
-            if (health==0)
+            
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }
@@ -52,8 +51,10 @@ public class PlaneController : MonoBehaviour
         
         if (col.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("PlaneController hit Enemy");
             health--;
-            if (health==0)
+            
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }

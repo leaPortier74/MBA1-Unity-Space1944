@@ -23,7 +23,7 @@ public class BulletEnemyManager : MonoBehaviour
         m_SpawnRoutine = StartCoroutine(SpawnRoutine());
     }
 
-    public void StopSpawninig()
+    public void StopSpawning()
     {
         StopCoroutine(m_SpawnRoutine);
     }
@@ -55,9 +55,8 @@ public class BulletEnemyManager : MonoBehaviour
         BulletEnemy.StartSpawning();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        StopSpawning();
     }
 }

@@ -25,6 +25,10 @@ public class BulletEnemy : MonoBehaviour
 
     }
     
+    void OnBecameInvisible() {
+        Destroy(gameObject);
+    }
+    
     public void Die()
     {
         Destroy(gameObject);
@@ -39,11 +43,10 @@ public class BulletEnemy : MonoBehaviour
             //col.gameObject.GetComponent<Bullet>().Die();
             Destroy(col.gameObject);
         } 
-        
         if (col.gameObject.CompareTag("Bounds"))
         {
             Destroy(gameObject);
-        } 
+        }
     }
 
 }
