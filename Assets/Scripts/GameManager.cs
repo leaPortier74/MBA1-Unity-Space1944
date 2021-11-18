@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     public AudioManager Audio { get; private set; }
     
     public EnemiesManager Enemies { get; private set; }
-    
+
     public BulletManager Bullet { get; private set; }
+
+    public PlaneController Player;
 
     private void Awake()
     {
@@ -32,7 +34,9 @@ public class GameManager : MonoBehaviour
         Audio = GetComponent<AudioManager>();
         Enemies = GetComponent<EnemiesManager>();
         Bullet = GetComponent<BulletManager>();
+        Player = GetComponent<PlaneController>();
     }
+
     
     public void StartGame()
     {
@@ -41,12 +45,20 @@ public class GameManager : MonoBehaviour
         Enemies.StartSpawning();
         //Score.Reset();
     }
+
+    public void PlayerDie()
+    {
+        if (Player)
+        {
+            StopGame();
+        }
+    }
     
     private void StopGame()
     {
         Playing = false;
         Enemies.StopSpawninig();
-        
+
         //Score.SubmitScore(Score.Value);
     }
     
@@ -58,9 +70,4 @@ public class GameManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

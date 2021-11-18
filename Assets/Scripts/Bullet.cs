@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    
+    private int health = 5;
     private SpriteRenderer m_Renderer;
     
     public BulletData Data{ get; private set; }
@@ -22,42 +24,23 @@ public class Bullet : MonoBehaviour
         Data = data;
 
     }
-    
-    public void Damage()
-    {
-        Destroy(gameObject);
-    }
-    
+
+
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("OnCollisionEnter2D");
 
         if (col.gameObject.CompareTag("BulletEnemy"))
         {
-            col.gameObject.GetComponent<BulletEnemy>().Damage();
-            Die();
+            //col.gameObject.GetComponent<BulletEnemy>().Die();
+            Destroy(col.gameObject);
         } 
         
         if (col.gameObject.CompareTag("Bounds"))
         {
-            Die();
+            Destroy(gameObject);
         }
     }
     
-    void Die()
-    {
-        Destroy(gameObject);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

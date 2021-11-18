@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
+
+    private int health = 5;
     private SpriteRenderer m_Renderer;
     
     public BulletData Data{ get; private set; }
@@ -23,12 +25,7 @@ public class BulletEnemy : MonoBehaviour
 
     }
     
-    public void Damage()
-    {
-        Destroy(gameObject);
-    }
-    
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }
@@ -39,25 +36,14 @@ public class BulletEnemy : MonoBehaviour
 
         if (col.gameObject.CompareTag("Bullet"))
         {
-            col.gameObject.GetComponent<Bullet>().Damage();
-            Die();
+            //col.gameObject.GetComponent<Bullet>().Die();
+            Destroy(col.gameObject);
         } 
         
         if (col.gameObject.CompareTag("Bounds"))
         {
-            Die();
+            Destroy(gameObject);
         } 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -18,12 +18,6 @@ public class PlaneController : MonoBehaviour
         m_body = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -41,28 +35,29 @@ public class PlaneController : MonoBehaviour
 
     }
 
-    public void Damage()
-    {
-        health--;
-        if (health==0)
-        {
-            Destroy(gameObject);
-        }
-    }
-    
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("OnCollisionEnter2D");
 
         if (col.gameObject.CompareTag("BulletEnemy"))
         {
-            col.gameObject.GetComponent<BulletEnemy>().Damage();
-            Die();
+            health--;
+            if (health==0)
+            {
+                Destroy(gameObject);
+            }
+            // col.gameObject.GetComponent<BulletEnemy>().Die();
+            Destroy(col.gameObject);
+        } 
+        
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            health--;
+            if (health==0)
+            {
+                Destroy(gameObject);
+            }
         } 
     }
     
-    void Die()
-    {
-        Destroy(gameObject);
-    }
 }

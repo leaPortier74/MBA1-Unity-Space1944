@@ -30,35 +30,22 @@ public class Enemy : MonoBehaviour
 
         if (col.gameObject.CompareTag("Bullet"))
         {
-            col.gameObject.GetComponent<Bullet>().Damage();
-            Die();
+            health--;
+            if (health==0)
+            {
+                Destroy(gameObject);
+            }
+            // col.gameObject.GetComponent<Bullet>().Die();
+            Destroy(col.gameObject);
         } 
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-    
-    public void Damage()
-    {
-        health--;
-        if (health==0)
+        
+        if (col.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
-        }
-    }
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+            health--;
+            if (health==0)
+            {
+                Destroy(gameObject);
+            }
+        } 
     }
 }

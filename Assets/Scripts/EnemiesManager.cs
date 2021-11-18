@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemiesManager : MonoBehaviour
 {
+
+    private int nbEnemies;
 
     private List<Enemy> m_Enemy = new List<Enemy>();
     
@@ -39,15 +42,21 @@ public class EnemiesManager : MonoBehaviour
     
     private void Spawn()
     {
+        Debug.Log("in Spawn");
+        if ( nbEnemies < 10)
+        {
+            Debug.Log("in nbEnemies");
+            Enemy enemy = Instantiate(enemyPrefab, spawner.position, Quaternion.identity);
+            enemy.transform.parent = container.transform;
+    
+            EnemyData data = getRandomEnemyData();
 
-        Enemy enemy = Instantiate(enemyPrefab, spawner.position, Quaternion.identity);
-        enemy.transform.parent = container.transform;
+            m_Enemy.Add(enemy);
+            
+            nbEnemies++;
 
-        EnemyData data = getRandomEnemyData();
-
-       // kill enemies
+        }
         
-        m_Enemy.Add(enemy);
     }
 
     private EnemyData getRandomEnemyData()
