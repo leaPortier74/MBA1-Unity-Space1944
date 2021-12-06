@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,7 @@ public class BulletManager : MonoBehaviour
         Spawn();
         yield return new WaitForSeconds(delay);
         StartSpawning();
+        
     }
     
     private void Spawn()
@@ -57,6 +59,8 @@ public class BulletManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        StopSpawning();
+        StopCoroutine(m_SpawnRoutine);
     }
+    
+
 }

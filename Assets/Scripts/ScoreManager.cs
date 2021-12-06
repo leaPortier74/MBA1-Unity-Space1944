@@ -36,4 +36,10 @@ public class ScoreManager : MonoBehaviour
         Value = 0;
     }
 
+    private void Start()
+    {
+        
+    }
+    
+
 }

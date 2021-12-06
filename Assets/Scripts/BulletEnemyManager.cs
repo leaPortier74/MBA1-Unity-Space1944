@@ -36,6 +36,7 @@ public class BulletEnemyManager : MonoBehaviour
     
     private void Spawn()
     {
+        if (!spawner) return;
 
         GameObject bullet = Instantiate(bulletPrefab, spawner.transform.position, Quaternion.identity);
 
@@ -56,6 +57,6 @@ public class BulletEnemyManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        StopSpawning();
+        StopCoroutine(m_SpawnRoutine);
     }
 }

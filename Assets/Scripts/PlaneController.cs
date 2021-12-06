@@ -22,7 +22,6 @@ public class PlaneController : MonoBehaviour
     void Update()
     {
         // Get both axis
-
         float translationX = Input.GetAxis("Horizontal");
         float translationY = Input.GetAxis("Vertical");
 
@@ -31,9 +30,9 @@ public class PlaneController : MonoBehaviour
 
         // Apply the velocity to the Rigidbody2D
         m_body.velocity = translation * speed;
-
-
     }
+    
+    
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -47,7 +46,6 @@ public class PlaneController : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
-                gameManager.StopGame();
             }
             // col.gameObject.GetComponent<BulletEnemy>().Die();
             Destroy(col.gameObject);

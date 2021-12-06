@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
-
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
-    
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log("OnCollisionEnter2D");

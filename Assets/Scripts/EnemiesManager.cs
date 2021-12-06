@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class EnemiesManager : MonoBehaviour
 {
@@ -28,7 +30,7 @@ public class EnemiesManager : MonoBehaviour
         m_SpawnRoutine = StartCoroutine(SpawnRoutine());
     }
 
-    public void StopSpawninig()
+    public void StopSpawning()
     {
         StopCoroutine(m_SpawnRoutine);
     }
@@ -42,6 +44,8 @@ public class EnemiesManager : MonoBehaviour
     
     private void Spawn()
     {
+        if (!spawner) return;
+        
         Debug.Log("in Spawn");
         if ( nbEnemies < 10)
         {
@@ -64,5 +68,9 @@ public class EnemiesManager : MonoBehaviour
         int index = Random.Range(0, enemyDataList.Count);
         return enemyDataList[index];
     }
-    
+
+    public void OnDestroy()
+    {
+        StopCoroutine(m_SpawnRoutine);
+    }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,15 +6,19 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     
-    private bool Playing = false;
+    public bool Playing { get; private set; } = false;
     
-    public ScoreManager Score { get; private set; }
+    //public ScoreManager Score { get; private set; }
+    
+    public PlaneController Plane { get; private set; }
 
     public AudioManager Audio { get; private set; }
     
     public EnemiesManager Enemies { get; private set; }
 
     public BulletManager Bullet { get; private set; }
+    
+    public TimeManager Timer { get; private set; }
 
 
     private void Awake()
@@ -29,35 +32,40 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Score = GetComponent<ScoreManager>();
+        Plane = GetComponent<PlaneController>();
+        //Score = GetComponent<ScoreManager>();
         Audio = GetComponent<AudioManager>();
         Enemies = GetComponent<EnemiesManager>();
         Bullet = GetComponent<BulletManager>();
+        Timer = GetComponent<TimeManager>();
+        Timer.Completed += TimeCompletedHandler;
     }
 
     
     public void StartGame()
     {
         Playing = true;
-        //Audio.PlayMainTheme();
+        Audio.PlayMainTheme();
         Enemies.StartSpawning();
         Bullet.StartSpawning();
         //Score.Reset();
+        Timer.Reset();
     }
     
     public void StopGame()
     {
         Playing = false;
-        Enemies.StopSpawninig();
-        Bullet.StartSpawning();
+        Plane.health = 0;
+        Enemies.StopSpawning();
+        Bullet.StopSpawning();
         //Score.SubmitScore(Score.Value);
     }
     
-    // Start is called before the first frame update
-    void Start()
+    private void TimeCompletedHandler(object sender, EventArgs e)
     {
-        StartGame();
-
+        StopGame();
     }
+    
+    
 
 }
